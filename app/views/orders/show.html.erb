@@ -20,15 +20,20 @@
           <% @order.line_items.each do |item| %>
             <%= render 'item', product: item.product, quantity: item.quantity.to_i %>
           <% end %>
+          
       </tbody>
       <tfoot>
         <tr>
+        <th>
+            <%=@order.email%>
+          </th>
           <th colspan="4">
             TOTAL:
           </th>
           <th>
            <%= humanized_money_with_symbol ((@order.total_cents / 100.to_f).round(2)) %>
           </th>
+
         </tr>
       </tfoot>
     </table>
