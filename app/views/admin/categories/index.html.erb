@@ -1,0 +1,21 @@
+<h1>Admin &raquo; Categories</h1>
+<br>
+
+
+<div class="well">
+<%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+</div>
+
+<table class="table table-bordered">
+<tr>
+  <th>Category</th>
+</tr>
+<% @categories.each do |cat| %>
+<tr>
+  <td>
+    <h4><%= cat.name %></h4>
+    <br>
+  </td>
+  </tr>
+  <% end %>
+</table>
