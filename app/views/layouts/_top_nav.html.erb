@@ -30,8 +30,11 @@
         </li>
         
         <% if current_user %>
+          <li style = "margin-top: 14px;">
+            Signed in as <%= current_user.name %>
+          </li>
           <li>
-            Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+            <%= link_to "Logout", '/logout' %>
           </li>
         <% else %>
           <li>
