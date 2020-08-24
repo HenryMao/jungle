@@ -1,2 +1,30 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin &raquo; Dashboard </h1>
+<br>
+
+
+<table class="table table-bordered">
+<tr>
+  <th>Category</th>
+  <th>Name</th>
+  <th>Quantity</th>
+</tr>
+<% @product.each do |item| %>
+<tr>
+  <td>
+  <% @category.each do |cat| %>
+    <% if item.category_id == cat.id %>
+      <%=cat.name%>
+    <% end %>
+  <% end %>
+  </td>
+  <td>
+    <h4><%= item.name %></h4>
+    <br>
+    <p><%= item.description %></p>
+  </td>
+  <td>
+    <%=item.quantity%>    
+  </td>
+  </tr>
+  <% end %>
+</table>
